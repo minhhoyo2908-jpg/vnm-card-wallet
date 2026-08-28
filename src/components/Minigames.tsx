@@ -57,11 +57,11 @@ function Slots({ apply, balance }: { apply: (l: string, a: number) => void; bala
     setSpinning(true);
     setMsg("");
     const iv = window.setInterval(() => {
-      setReels(Array.from({ length: 3 }, () => SYMBOLS[Math.floor(Math.random() * 4)]));
+      setReels(Array.from({ length: 3 }, () => SYMBOLS[Math.floor(Math.random() * 4)]!));
     }, 80);
     window.setTimeout(() => {
       window.clearInterval(iv);
-      const final = Array.from({ length: 3 }, () => SYMBOLS[Math.floor(Math.random() * 4)]);
+      const final = Array.from({ length: 3 }, () => SYMBOLS[Math.floor(Math.random() * 4)]!);
       setReels(final);
       setSpinning(false);
       const all = final[0] === final[1] && final[1] === final[2];
