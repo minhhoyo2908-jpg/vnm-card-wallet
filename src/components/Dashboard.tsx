@@ -110,7 +110,7 @@ export function Dashboard({
             className={
               "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm transition-all duration-300 " +
               (panel === key
-                ? "bg-[var(--gradient-gold)] font-semibold text-primary-foreground shadow-[var(--shadow-gold)]"
+                ? "bg-gold-gradient font-semibold text-primary-foreground shadow-[var(--shadow-gold)]"
                 : "border border-border text-muted-foreground hover:border-gold/50 hover:text-foreground")
             }
           >
@@ -144,7 +144,7 @@ function PrimaryButton(props: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button
       {...props}
-      className="rounded-xl bg-[var(--gradient-gold)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-gold)] transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-40 disabled:hover:scale-100"
+      className="rounded-xl bg-gold-gradient px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-gold)] transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-40 disabled:hover:scale-100"
     />
   );
 }

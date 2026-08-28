@@ -37,7 +37,7 @@ export function CardOnboarding({ onDone }: { onDone: (name: string) => void }) {
               <span className="font-display text-lg">VNM</span>
               <CreditCard className="size-5 text-gold" />
             </div>
-            <div className="mt-6 h-8 w-12 rounded-md bg-[var(--gradient-gold)]" />
+            <div className="mt-6 h-8 w-12 rounded-md bg-gold-gradient" />
             <p className="mt-6 font-mono text-base tracking-[0.28em] text-foreground/80">
               4826 •••• •••• 1195
             </p>
@@ -60,7 +60,7 @@ export function CardOnboarding({ onDone }: { onDone: (name: string) => void }) {
       {stage === "idle" && (
         <button
           onClick={insert}
-          className="mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--gradient-gold)] px-7 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-gold)] transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
+          className="mt-10 inline-flex items-center gap-2 rounded-full bg-gold-gradient px-7 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-gold)] transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
         >
           Nhét thẻ vào <ChevronRight className="size-4" />
         </button>
@@ -96,7 +96,7 @@ export function CardOnboarding({ onDone }: { onDone: (name: string) => void }) {
           <button
             type="submit"
             disabled={!name.trim()}
-            className="mt-5 w-full rounded-xl bg-[var(--gradient-gold)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-gold)] transition-transform duration-300 hover:scale-[1.02] disabled:opacity-40 disabled:hover:scale-100"
+            className="mt-5 w-full rounded-xl bg-gold-gradient px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-gold)] transition-transform duration-300 hover:scale-[1.02] disabled:opacity-40 disabled:hover:scale-100"
           >
             Mở ví
           </button>

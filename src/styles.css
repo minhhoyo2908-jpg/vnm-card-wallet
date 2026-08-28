@@ -187,3 +187,8 @@
 @utility animate-pulse-slot {
   animation: pulse-slot 2.4s ease-in-out infinite;
 }
+
+@utility bg-gold-gradient {
+  background-image: var(--gradient-gold);
+  color: var(--primary-foreground);
+}

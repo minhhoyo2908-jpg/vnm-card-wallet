@@ -114,7 +114,7 @@ function CoinFlip({ apply, balance }: { apply: (l: string, a: number) => void; b
     <GameShell title="Sấp Ngửa" desc={`Đoán đúng nhân đôi ${formatVnd(BET)}`}>
       <div
         className={
-          "mx-auto flex size-14 items-center justify-center rounded-full bg-[var(--gradient-gold)] font-display text-xl text-primary-foreground transition-transform duration-700 " +
+          "mx-auto flex size-14 items-center justify-center rounded-full bg-gold-gradient font-display text-xl text-primary-foreground transition-transform duration-700 " +
           (flip ? "[transform:rotateY(720deg)]" : "")
         }
       >
