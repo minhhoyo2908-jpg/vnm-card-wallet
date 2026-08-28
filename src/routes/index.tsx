@@ -1,24 +1,33 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useWallet } from "@/lib/wallet";
+import { CardOnboarding } from "@/components/CardOnboarding";
+import { Dashboard } from "@/components/Dashboard";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Ví VNM — Ví điện tử sang trọng, tối giản" },
+      {
+        name: "description",
+        content:
+          "Ví VNM: nhét thẻ, xem số dư, chuyển tiền, nạp tiền, mua dịch vụ và chơi minigame trong một giao diện ngân hàng tối giản.",
+      },
+      { property: "og:title", content: "Ví VNM — Ví điện tử sang trọng, tối giản" },
+      {
+        property: "og:description",
+        content: "Trải nghiệm ví điện tử với hiệu ứng nhét thẻ và quy tắc Không Ba.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  const { state, ready, setName, apply, reset } = useWallet();
+
+  if (!ready) return <div className="min-h-screen" />;
+
+  if (!state.name) return <CardOnboarding onDone={setName} />;
+
+  return <Dashboard state={state} apply={apply} onLogout={reset} />;
 }
